@@ -78,7 +78,7 @@ class NotificationDelegate(btle.DefaultDelegate):
         if self._buffer[-2:] == END_OF_MESSAGE:
             self.handle_data(self._buffer)
             self._buffer = b''
-            self.need_data = False 
+            self.need_data = False
 
     def handle_data(self, bytes_data):
         # print(":".join("{:02x}".format(ord(c)) for c in bytes_data))
