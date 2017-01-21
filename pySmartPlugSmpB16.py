@@ -81,6 +81,7 @@ class NotificationDelegate(btle.DefaultDelegate):
             self.need_data = False 
 
     def handle_data(self, bytes_data):
+        # print(":".join("{:02x}".format(ord(c)) for c in bytes_data))
         # it's a state change confirm notification ?
         if bytes_data[0:3] == b'\x0f\x04\x03':
             self.chg_is_ok = True
